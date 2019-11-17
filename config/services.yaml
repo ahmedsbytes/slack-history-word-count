@@ -1,0 +1,17 @@
+services:
+  _defaults:
+    autowire: true
+    public: false
+    autoconfigure: true
+
+  event_dispatcher:
+    class: Symfony\Component\EventDispatcher\EventDispatcher
+    public: true
+
+  SlackHistoryWordCount\MainCommand:
+    tags:
+      - { name: 'console.command' }
+
+  SlackHistoryWordCount\SlackHistoryFetcherService:
+    arguments:
+      $slackApiToken: "%env(SLACK_API_TOKEN)%"
