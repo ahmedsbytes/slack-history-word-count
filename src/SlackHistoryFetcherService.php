@@ -24,7 +24,7 @@ class SlackHistoryFetcherService
             [
                 'query' => [
                     'token'   => $this->slackApiToken,
-                    'channel' => 'CD9EQJPQW',
+                    'channel' => $channel,
                     'count'   => 1000,
                     'latest'  => $fromTime->getTimestamp(),
                 ],
